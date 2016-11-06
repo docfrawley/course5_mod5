@@ -1,0 +1,44 @@
+<div >
+  <legend style="color:grey;">Sign Up for Our Newsletter</legend>
+  <form style="color:black;" name='regForm' novalidate>
+
+    <input type="text" name="fname" placeholder="Enter your first name"
+      ng-model="sctrl.user.fname"
+      required>
+      <span style="color:grey;"
+        ng-if="regForm.fname.$error.required && regForm.fname.$touched">
+        Please enter your first name
+      </span><br>
+
+      <input type="text" name="lname"
+  			placeholder="Enter The Last Name" ng-model="sctrl.user.lname"
+  			required>
+        <span style="color:grey;"
+  			ng-if="regForm.lname.$error.required && regForm.lname.$touched">
+  			Please enter your last name </span> <br>
+
+        <input type="email" name="email" placeholder="Enter your email address"
+  			ng-model="sctrl.user.email" required>
+        <span style="color:grey;"
+  			ng-if="regForm.email.$invalid && regForm.email.$touched">
+        Please enter a valid email address</span> <br>
+
+        <input type="text" name="phone"
+  			placeholder="Phone ###-###-####" ng-model="sctrl.user.phone"
+  			pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span style="color:grey;"
+  			ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+  			Phone must be in the format ###-###-####. </span> <br>
+
+        <input type="text"
+  			name="shortName" placeholder="Short name of your favorite dish"
+  			ng-model="sctrl.shortName"> <span
+  			ng-if="regForm.shortName.$error.required && regForm.shortName.$touched">
+  			Please enter your favourite item's short name</span>
+  <span ng-if="sctrl.nogo" ng-hide="!sctrl.nogo" style="color:grey;">No such menu number exists</span><br>
+  		<button ng-disabled="regForm.$invalid"
+  			ng-click="sctrl.submit()">Submit</button>
+  <span ng-if="sctrl.success" style="color:grey;">Your information has been saved</span><br>
+  	</form>
+  </fieldset>
+</div>

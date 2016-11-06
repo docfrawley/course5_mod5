@@ -1,0 +1,17 @@
+<div>
+  <span ng-if="myctrl.items.fname==null" class="error">Not Signed Up Yet. Sign up Now!
+    <a href="#" ui-sref="public.signup">Sign up Now!</a></span>
+  <span ng-if="myctrl.items.fname!=null">
+    <strong>Your Registered Information</strong><br/><br/>
+    First Name: {{myctrl.items.fname}}<br/>
+    Last Name:  {{myctrl.items.lname}}<br/>
+    Email:      {{myctrl.items.email}}<br/>
+    Phone:      {{myctrl.items.phone}}<br/><br/>
+    Favorite Item:<br/>
+    Name:       {{myctrl.items.item_name}}<br/>
+
+  Decription: {{myctrl.items.item_desc}}<br/><br/>
+  <img ng-src="{{myctrl.items.item_img}}"></img><br>
+
+  </span>
+</div>
